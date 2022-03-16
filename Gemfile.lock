@@ -186,7 +186,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   debug
-  image_processing (>=1.2)
+  image_processing (>= 1.2)
   pg
   puma (~> 5.0)
   rails (~> 7.0.2.2)
