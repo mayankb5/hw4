@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
 
+  def index
+    @posts = Post.all
+  end
+
   def new
     @post = Post.new
     @post.place_id = params["place_id"]
@@ -7,13 +11,13 @@ class PostsController < ApplicationController
 
   def create
   if @current_user
-    @post = Post.new(params["post"])
+    @post = Post.new(params["post_id"])
     @post.user_id = @current_user.id
     @post.save
   else
     flash[:notice] = "Login Please"
   end 
-    redirect_to "/places/#{@post.place.id}"
+    redirect_to "/posts"
   end
   
 end
